@@ -79,5 +79,24 @@
   });
   ```
 
+  ## Sintaxe dos métodos HTTP do aplicativo Express
+  ```javascript
+  app.get(path, (callback => {}))
+  ```
+  ```javascript
+  app.get('path', (request, response) => response.send('Hello word'));
+  ```
+  ### response
+   - Objeto que contém métodos e propriedades que permitem enviar uma resposta de volta ao cliente.
+
+  #### Métodos do objeto response
+   - `response.send(data): Envia uma resposta ao cliente. Pode ser uma string, objeto ou array`
+   - `res.json(data): Envia uma resposta em formato JSON.`
+   - `res.status(code): Define o código de status da resposta.`
+   - `res.redirect(path): Redireciona o cliente para o caminho especificado.`
+
+  
+  
+
   
 </details>
