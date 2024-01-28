@@ -58,9 +58,26 @@
   ```
   ### Inicie o servidor com `yarn start` 
 
+</details>
+<details>
+  <summary>Express</summary>
 
+  # Express
+  #### express()
+   - Retorna uma instância de um aplicativo Express que contém funções e configurações
+  
+  ```javascript
+  const express = require('express');
+  const app = express();
 
+  app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
 
+  app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+  });
+  ```
 
   
 </details>
