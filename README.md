@@ -79,6 +79,13 @@
   });
   ```
 
+  ## Exportação e importação de arquivos
+  ### Exportação e importação com module.export
+  *EXEMPLO*
+   - No momento de exportação, exporta-se o dado requerido e no momento da importação, importa-se o arquivo e apenas os dados exportados serão recebidos.
+   - `module.export = variavelTeste`
+   - `const app = require('./app');`
+  
   ## Sintaxe dos métodos HTTP do aplicativo Express
   ```javascript
   app.get(path, (callback => {}))
@@ -95,8 +102,8 @@
    - `res.status(code): Define o código de status da resposta.`
    - `res.redirect(path): Redireciona o cliente para o caminho especificado.`
 
-  
-  
+  ## request
+   - Objeto que contém informações sobre a solicitação do cliente
 
   
 </details>
