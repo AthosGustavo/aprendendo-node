@@ -85,6 +85,35 @@
    - No momento de exportação, exporta-se o dado requerido e no momento da importação, importa-se o arquivo e apenas os dados exportados serão recebidos.
    - `module.export = variavelTeste`
    - `const app = require('./app');`
+
+  #### Exportando objetos
+  ```javascript
+  // No arquivo config.js
+  const config = {
+    chave1: 'valor1',
+    chave2: 'valor2',
+  };
+  module.exports = config;
+
+  // Em outro arquivo
+  const config = require('./config');
+  console.log(config.chave1); // valor1
+  ```
+  #### Exportando multiplos valores
+  ```javascript
+  // No arquivo utils.js
+  const util1 = 'alguma coisa';
+  const util2 = 'outra coisa';
+
+  module.exports = {
+    util1,
+    util2,
+  };
+
+  // Em outro arquivo
+  const utils = require('./utils');
+  console.log(utils.util1); // alguma coisa
+  ```
   
   ## Sintaxe dos métodos HTTP do aplicativo Express
   ```javascript
