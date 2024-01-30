@@ -117,7 +117,7 @@
   
   ## Sintaxe dos métodos HTTP do aplicativo Express
   ```javascript
-  app.get(path, (callback => {}))
+  app.get(path,middleware, (callback => {}))
   ```
   ```javascript
   app.get('path', (request, response) => response.send('Hello word'));
