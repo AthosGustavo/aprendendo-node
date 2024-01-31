@@ -172,6 +172,45 @@
 
 <details>
   <summary>Mapeando entidades</summary>
+
+  # Mapeando entidades
+
+  ## Anotations
+  ### @Entity()
+   - Anotação usada para sinalizar que a classe representa uma tabela no banco de dados
+   - Caso o nome da classe seja diferente do nome da tabela do banco, dentro do parênteses o nome da tabela deve ser colocada entre aspas.
+  
+  ### @PrimaryColumn()
+   - A anotação é usada para marcar uma propriedade como chave primária da tabela
+
+  ### @Column()
+   - Anotação usada para sinalizar que o atributo da classe representa uma coluna do banco de dados
+   - Caso o nome do atributo seja diferente do nome da coluna do banco de dados, o nome da coluna deve ser colocada entre aspas no parênteses
+  
+  ### @CreatedDateColumn()
+   - Anotação usada para marcar uma propriedade que será automaticamente preenchida com a data e a hora de criação da entidade
+  
+  ```javascript
+  import { Entity, PrimaryColumn, Column, CreateDateColumn } from 'typeorm';
+
+  @Entity()
+  class User {
+    @PrimaryColumn()
+    id: number;
+
+    @Column()
+    username: string;
+
+    @Column()
+    email: string;
+
+    @CreateDateColumn()
+    createdAt: Date;
+
+  // outras propriedades...
+  }
+
+```
   
 </details>
 
