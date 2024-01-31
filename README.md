@@ -136,23 +136,57 @@
 
   
 </details>
+<details>
+  <summary>TypeORM</summary>
 
-## Entendendo Repository
-### Imports
-```javascript
-import { getRepository } from 'typeorm';
-import { EntidadeMapeada } from './entities/EntidadeMapeada';
-```
-### DataSource
- - Arquivo com dados de acesso ao banco de dados
+  # TypeORM
+  ## DataSource
+   - Arquivo com dados de acesso ao banco de dados.
 
-### Retorno de getRepository()
- - Retorna um objeto que contém informações da entidade mapeada, do banco de dados e métodos para realizar operações.
-```javascript
-const entidadeMapeadaRepository = dataSource.getRepository(EntidadeMapeada);
+  ```typescript
+  import { DataSource } from "typeorm"
+
+  const AppDataSource = new DataSource({
+    type: "mysql",
+    host: "localhost",
+    port: 3306,
+    username: "athos",
+    password: "senha",
+    database: "nomeBanco",
+  })
+
+  AppDataSource.initialize()
+    .then(() => {
+        console.log("Data Source has been initialized!")
+    })
+    .catch((err) => {
+        console.error("Error during Data Source initialization", err)
+  })
 ```
-### entidadeMapeadaRepository
- - Objeto que detém os métodos de consulta ao banco de dados
+
+  
+
+
+  
+</details>
+<details>
+  <summary>Repository</summary>
+  
+  ## Entendendo Repository
+  ### Imports
+  ```javascript
+  import { getRepository } from 'typeorm';
+  import { EntidadeMapeada } from './entities/EntidadeMapeada';
+  ```
+  
+  ### Retorno de getRepository()
+   - Retorna um objeto que contém informações da entidade mapeada, do banco de dados e métodos para realizar operações.
+  ```javascript
+  const entidadeMapeadaRepository = dataSource.getRepository(EntidadeMapeada);
+  ```
+  ### entidadeMapeadaRepository
+   - Objeto que detém os métodos de consulta ao banco de dados
+</details>
 
 
 
