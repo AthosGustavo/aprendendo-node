@@ -209,6 +209,54 @@
   
 </details>
 
+<details>
+  <summary>Relacionamento</summary>
+
+  # Relacionamento
+  ## @manyToOne
+
+  ### Lógica e sintaxe do relacionamento
+   - `() => UserProfile` é uma função que retorna a classe da entidade com a qual o relacionamento esta sendo feito.
+   - `@JoinColumn` é usado para indicar que a coluna na tabela atual (a tabela User neste caso) deve ser usada como coluna de junção para o relacionamento.
+  ```javascript
+  @OneToOne(() => UserProfile)
+  @JoinColumn()
+  profile: UserProfile;
+  ```
+
+  
+  ```javascript
+  import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from 'typeorm';
+
+  @Entity()
+  class User {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    name: string;
+
+    @OneToOne(() => UserProfile)
+    @JoinColumn()
+    profile: UserProfile;
+  }
+  ```
+  ```javascript
+  @Entity()
+  class UserProfile {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    bio: string;
+  }
+
+  ```
+  
+  
+  
+</details>
+
   
 </details>
 
