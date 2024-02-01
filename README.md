@@ -252,7 +252,49 @@
   }
 
   ```
-  
+  ## @manyToOne
+
+  ### Lógica e sintaxe do relacionamento
+
+   - A função especifica a classe entidade alvo
+   - Usa uma variável para representar a classe alvo e sinaliza que a propriedade autor da classe alvo será usada para fazer a junção.
+
+  ```javascript
+  @OneToMany(() => Post, post => post.author)
+  posts: Post[];
+  ```
+  ```javascript
+  import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+
+  @Entity()
+  class User {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    name: string;
+
+    @OneToMany(() => Post, post => post.author)
+    posts: Post[];
+  }
+
+  ```
+  ```javascript
+  import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+
+  @Entity()
+  class Post {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    title: string;
+
+    @ManyToOne(() => User, user => user.posts)
+    author: User;
+  }
+
+  ```
   
   
 </details>
