@@ -59,6 +59,11 @@
   ### Inicie o servidor com `yarn start` 
 
 </details>
+
+<details>
+  <summary>Arquitetura básica de um projeto</summary>
+</details>
+
 <details>
   <summary>Express</summary>
 
