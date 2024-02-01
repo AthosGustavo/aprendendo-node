@@ -62,6 +62,9 @@
 
 <details>
   <summary>Arquitetura básica de um projeto</summary>
+
+  ![arquitetura-passo2 drawio](https://github.com/AthosGustavo/aprendendo-node/assets/112649935/643ac6b5-f38d-4caf-ade7-2d910a42e2ca)
+  
 </details>
 
 <details>
@@ -83,6 +86,7 @@
     console.log('Server listening on port 3000');
   });
   ```
+
 
   ## Exportação e importação de arquivos
   ### Exportação e importação com module.export
