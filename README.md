@@ -1,4 +1,4 @@
-# Aprendendo node
+# Documentação base para um projeto em Node, Express, TypeScript e TypeORM
 
 ## Obs: Documento em constante edição
 
