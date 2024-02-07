@@ -304,7 +304,40 @@
   }
 
   ```
-  
+  ## @ManyToMany
+   - A anotação marca que a tabela irá ter uma relacionamento muitos para muitos através da propriedade `courses`
+   - A função `() => Course` devolve a classe classe `Course`
+   - Em seguida, a propriedade `courses` é criada e associada ao tipo da classe retornada pela função.
+  ```javascript
+  import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+
+  @Entity()
+  class Student {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    name: string;
+
+    @ManyToMany(() => Course)
+    @JoinTable()
+    courses: Course[];
+  }
+  ```
+  ```javascript
+  @Entity()
+  class Course {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    name: string;
+
+    @ManyToMany(() => Student)
+    students: Student[];
+  }
+
+  ```
   
 </details>
 
