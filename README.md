@@ -222,7 +222,7 @@
   <summary>Relacionamento</summary>
 
   # Relacionamento
-  ## @manyToOne
+  ## @OneToOne
 
   ### Lógica e sintaxe do relacionamento
    - `() => UserProfile` é uma função que retorna a classe da entidade com a qual o relacionamento esta sendo feito.
