@@ -23,7 +23,7 @@
   yarn add mysql2      //Instala o driver do MySQL para Node.JS
   yarn add nodemon -D  //monitora as alterações nos arquivos do projeto e reinicia automaticamente o servidor quando detecta alteração.
   yarn add dotenv      //Instala a biblioteca dotenv que facilita a leitura de variáveis de ambiente
-
+  yarn add typeorm reflect-metada 
   ```
   ## Depedências
   
