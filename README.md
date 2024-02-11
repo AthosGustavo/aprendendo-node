@@ -151,27 +151,26 @@
   # TypeORM
   ## DataSource
    - Arquivo com dados de acesso ao banco de dados.
-
+   - Na chave entites, deve ser colocada as entidades mapeadas.
+   - A porta do banco de dados não é colocada no método construtor de DataSource, porque o método irá usar a porta padão do mysql,`3606`
   ```typescript
-  import { DataSource } from "typeorm"
+  import { DataSource } from "typeorm";
+  import { envVariables } from "../config/env-variables";
+  import { User } from "../entities/User";
 
-  const AppDataSource = new DataSource({
-    type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "athos",
-    password: "senha",
-    database: "nomeBanco",
-  })
+  const [DATA_BASE_HOST, DATA_BASE_TYPE, DATA_BASE_USER, DATA_BASE_PASSWORD, DATA_BASE] = envVariables;
+    const AppDataSource = new DataSource({
+    type: DATA_BASE_TYPE,
+    host: DATA_BASE_HOST,
+    username: DATA_BASE_USER,
+    password: DATA_BASE_PASSWORD,
+    database: DATA_BASE,
+    entities:[User]
 
-  AppDataSource.initialize()
-    .then(() => {
-        console.log("Data Source has been initialized!")
-    })
-    .catch((err) => {
-        console.error("Error during Data Source initialization", err)
-  })
-```
+  });
+
+  export default AppDataSource;
+  ```
 
   
 <details>
