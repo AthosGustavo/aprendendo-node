@@ -18,12 +18,29 @@
   ## Comandos
   ```bash
   yarn init -y         //inicializa o projeto e cria um arquivo package.json
+  yarn typescript ts-node-dev @types/express -D
   yarn add express     //Simplifica o desenvolvimento de aplicativos web em Node.js,baixa a pasta node_modules e o package-lock.json
   yarn add mysql2      //Instala o driver do MySQL para Node.JS
   yarn add nodemon -D  //monitora as alterações nos arquivos do projeto e reinicia automaticamente o servidor quando detecta alteração.
   yarn add dotenv      //Instala a biblioteca dotenv que facilita a leitura de variáveis de ambiente
 
   ```
+  ## Depedências
+  
+  ### Dependência ts-node-dev
+   - Bilioteca utilizada para executar arquivos TypeScript diretamente, sem a necessidade de compilar para JavaScript manualmente antes.
+ 
+`--transpile-only`:opção do ts-node-dev que instrui o TypeScript a apenas transpilar o código TypeScript para JavaScript sem realizar a checagem de tipos. 
+ 
+  - Comando para instalar a biblioteca `yarn add ts-node-dev --dev`
+ 
+  ### dependencia @types/express
+  - A dependência @types/express é usada para fornecer definições de tipos TypeScript para o Express.
+  - Essas definições de tipos sao usadas para que o compilador TypeScript possa verificar e garantir que seu código esteja em conformidade com a API do Express.
+ 
+  - Comando para instalar a dependencia `yarn add @types/express --dev`
+    - `--dev` significa que você está instalando esta dependência como uma dependência de desenvolvimento.
+  
   ## Configurando esLint
    - Ferramenta de linting que ajuda a manter um código JavaScript consistente e livre de erros.
   ```bash
@@ -58,6 +75,18 @@
   ```
   ### Inicie o servidor com `yarn start` 
 
+  ## Arquivo package.json
+   - Todas as dependências do projeto, incluindo Express, versões e quaisquer outras bibliotecas necessárias, são listadas neste arquivo.
+
+  #### objeto dependencies
+   - Lista as dependências do projeto que são necessárias para que o aplicativo seja executado em produção. 
+   - As dependências listadas nesta seção são instaladas por padrão quando alguém executa npm install ou yarn install no diretório do projeto.
+
+  #### objeto devDependencie
+   - Esta seção lista as dependências do projeto que são necessárias apenas durante o desenvolvimento e não são necessárias para o funcionamento do aplicativo em produção.
+   - Isso inclui coisas como bibliotecas de desenvolvimento, ferramentas de compilação, testes, entre outros. 
+   - Essas dependências não são incluídas no pacote que será implantado no ambiente de produção.
+   
 </details>
 
 <details>
