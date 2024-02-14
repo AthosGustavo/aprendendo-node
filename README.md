@@ -412,7 +412,8 @@ migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
 migrationsTableName: "migrations",
 ```
   - `migrationsTableName` Nome da tabela que que será armazenada as transações
-- 3: Criando uma migration
+- 3:Comando para criar uma nova migration `yarn typeorm migration:create <caminho>`
+- 4: Criando uma migration
 ```javascript
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
