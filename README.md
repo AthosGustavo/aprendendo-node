@@ -369,11 +369,6 @@
   
 </details>
 
-  
-</details>
-
-
-
 <details>
   <summary>Repository</summary>
   
@@ -391,7 +386,34 @@
   ```
   ### entidadeMapeadaRepository
    - Objeto que detém os métodos de consulta ao banco de dados
+
 </details>
+
+<details>
+  <summary>Migrations</summary>
+
+# Migrations
+### Passo a passo para gerar e rodar uma migration
+
+- 1:Criar os scrips para gerar e rodar a migration no arquivo `package.json`.
+```json
+"scripts": {
+    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "typeorm": "ts-node-dev node_modules/.bin/typeorm",
+    "build": "tsc",
+    "migration:generate":"typeorm-ts-node-commonjs -d ./src/database/DataSource.ts migration:generate ./src/migrations/default",
+    "migration:run":"typeorm-ts-node-commonjs -d ./src/database/DataSource.ts migration:run"
+  },
+```
+
+
+  
+</details>  
+</details>
+
+
+
+
 
 
 
